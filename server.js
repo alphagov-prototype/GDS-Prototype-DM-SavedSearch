@@ -209,6 +209,11 @@ if (promoMode === 'true') {
     next()
   })
 
+  app.use(function(req, res, next){
+    res.locals.session = req.session;
+    next();
+  });
+
   app.get('/robots.txt', function (req, res) {
     res.type('text/plain')
     res.send('User-agent: *\nDisallow: /')
@@ -295,5 +300,7 @@ utils.findAvailablePort(app, function (port) {
     })
   }
 })
+
+
 
 module.exports = app

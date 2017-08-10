@@ -8,9 +8,9 @@ router.get('/', function (req, res) {
 })
 
 router.post('/', function (req, res) {
-  if ( req.query.authenticated == "true" )
+  if ( req.query.profile_completed == "true" )
   {
-    req.session.authenticated = true;
+    req.session.profile_completed = true;
   }
   res.render('index')
 })
@@ -19,6 +19,25 @@ router.post('/', function (req, res) {
 router.get('/login', function (req, res) {
   res.render('login/index')
 })
+
+router.post('/login', function (req, res) {
+  req.session.authenticated = true;
+  res.redirect('/')
+})
+
+router.get('/logout', function (req, res) {
+  req.session.authenticated = false;
+  res.redirect('/login')
+})
+
+router.get('/buyers', function (req, res) {
+  if ( req.session.authenticated !== true )
+  {
+    return res.redirect('/login')
+  }
+  res.render('buyers/index')
+})
+
 
 router.get('/buyers/create', function (req, res) {
   res.render('login/register')
@@ -29,6 +48,7 @@ router.post('/buyers/create', function (req, res) {
 })
 
 router.get('/create-user', function (req, res) {
+  req.session.authenticated = true;
   res.render('login/create_user')
 })
 
