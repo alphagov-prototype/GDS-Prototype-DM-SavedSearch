@@ -7,6 +7,13 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
+router.post('/', function (req, res) {
+  if ( req.query.authenticated == "true" )
+  {
+    req.session.authenticated = true;
+  }
+  res.render('index')
+})
 
 // Route index page
 router.get('/login', function (req, res) {
@@ -19,6 +26,10 @@ router.get('/buyers/create', function (req, res) {
 
 router.post('/buyers/create', function (req, res) {
   res.render('login/registration_summary')
+})
+
+router.get('/create-user', function (req, res) {
+  res.render('login/create_user')
 })
 
 
