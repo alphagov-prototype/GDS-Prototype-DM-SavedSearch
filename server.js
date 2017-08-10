@@ -75,6 +75,7 @@ app.set('view engine', 'html')
 
 // Middleware to serve static assets
 app.use('/public', express.static(path.join(__dirname, '/public')))
+app.use('/static', express.static(path.join(__dirname, '/static')))
 app.use('/public', express.static(path.join(__dirname, '/govuk_modules/govuk_template/assets')))
 app.use('/public', express.static(path.join(__dirname, '/govuk_modules/govuk_frontend_toolkit')))
 app.use('/public/images/icons', express.static(path.join(__dirname, '/govuk_modules/govuk_frontend_toolkit/images')))
@@ -285,7 +286,7 @@ utils.findAvailablePort(app, function (port) {
         proxy: 'localhost:' + (port - 50),
         port: port,
         ui: false,
-        files: ['public/**/*.*', 'app/views/**/*.*'],
+        files: ['public/**/*.*', 'app/views/**/*.*', 'static/**/*.*'],
         ghostmode: false,
         open: false,
         notify: false,

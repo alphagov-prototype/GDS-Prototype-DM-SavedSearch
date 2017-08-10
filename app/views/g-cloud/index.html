@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Digital Marketplace
+{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="/public/css/dm-application.css">
+{% endblock %}
+
+{% block content %}
+{% include "includes/phase_banner_prototype.html" %}
+
+<div id="global-breadcrumb" class="header-context">
+  <nav>
+    <ol class="group" role="breadcrumbs">
+        <li><a href="/">Digital Marketplace</a></li>
+        
+      
+        <li>Cloud hosting, software and support</li>
+        
+      
+    </ol>
+  </nav>
+</div>
+
+<div id="wrapper">
+  <main id="content" role="main">
+    <div class="index-page">
+      <header class="page-heading">
+        <h1>Cloud hosting, software and support</h1>
+      </header>
+      <div class="grid-row">
+        <form action="/g-cloud/search" class="search-box column-two-thirds" method="get">
+          <input class="text-box" maxlength="200" name="q" type="text"> <button class="button-save" type="submit">Show services</button>
+        </form>
+      </div>
+      <div class="grid-row">
+        <div class="column-two-thirds framework-lots">
+          <nav role="navigation">
+            <ul class="browse-list">
+              <li class="browse-list-item">
+                <a class="browse-list-item-link" href="/g-cloud/search?lot=cloud-hosting">Cloud hosting</a>
+                <p class="browse-list-item-body"></p>
+                <p>Find cloud platform or infrastructure services to help you:</p>
+                <ul>
+                  <li>deploy, manage and run software</li>
+                  <li>provision and use processing, storage or networking resources</li>
+                </ul>
+                <p></p>
+                <p class="browse-list-item-subtext">eg content delivery networks or load balancing services</p>
+              </li>
+              <li class="browse-list-item">
+                <a class="browse-list-item-link" href="/g-cloud/search?lot=cloud-software">Cloud software</a>
+                <p class="browse-list-item-body">Find software applications that are accessed over the internet and hosted in the cloud.</p>
+                <p class="browse-list-item-subtext">eg accounting tools or customer service management software</p>
+              </li>
+              <li class="browse-list-item">
+                <a class="browse-list-item-link" href="/g-cloud/search?lot=cloud-support">Cloud support</a>
+                <p class="browse-list-item-body">Find cloud support services to help you set up and maintain your cloud software or hosting services.</p>
+                <p class="browse-list-item-subtext">eg migration services or ongoing support</p>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
+
+

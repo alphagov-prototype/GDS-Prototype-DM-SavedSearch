@@ -1,0 +1,716 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Digital Marketplace
+{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="/public/css/dm-application.css">
+{% endblock %}
+
+{% block content %}
+{% include "includes/phase_banner_prototype.html" %}
+
+<div id="global-breadcrumb" class="header-context">
+  <nav>
+    <ol class="group" role="breadcrumbs">
+        <li><a href="/">Digital Marketplace</a></li>
+        
+      
+        <li><a href="/g-cloud">Cloud hosting, software and support</a></li>
+        
+      
+        <li>Cloud software</li>
+        
+      
+    </ol>
+  </nav>
+</div>
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-full">
+            <div id="wrapper">
+                <main id="content" role="main">
+
+                    <header class="page-heading">
+                        <h1>Search results</h1>
+                    </header>
+                    <div id="js-dm-live-search-wrapper" class="grid-row">
+                        <section class="column-one-third search-page-filters" aria-label="Search filters">
+                            <form action="/g-cloud/search" method="get" id="js-dm-live-search-form">
+
+                                <div class="govuk-option-select filter-field-text js-collapsible">
+                                    <div class="container-head">
+                                        <label class="option-select-label" for="keywords">
+                                            Keyword search
+                                        </label>
+                                    </div>
+                                    <div class="container-search">
+                                        <input type="search" name="q" id="keywords" value="" maxlength="200">
+                                        <input class="submit" type="submit" value="Search">
+                                    </div>
+                                </div>
+
+                                <div id="js-dm-live-search-categories" class="js-dm-live-search-fade">
+                                    <div class="lot-filters">
+                                        <h2>Choose a category</h2>
+
+                                        <ul>
+
+                                            <li><a href="/g-cloud/search" class="lot-filters__top-level-link">All categories</a>
+
+                                                <ul>
+
+                                                    <li aria-current="page"><strong>Cloud software</strong>
+
+                                                        <ul class="lot-filters--last-list">
+
+                                                            <li><a href="/g-cloud/search?serviceCategories=accounting+and+finance&amp;lot=cloud-software">Accounting and finance (1513)</a></li>
+
+                                                            <li><a href="/g-cloud/search?serviceCategories=analytics+and+business+intelligence&amp;lot=cloud-software">Analytics and business intelligence (2605)</a></li>
+
+                                                            <li><a href="/g-cloud/search?serviceCategories=application+security&amp;lot=cloud-software">Application security (1277)</a></li>
+
+                                                            <li><a href="/g-cloud/search?serviceCategories=collaborative+working&amp;lot=cloud-software">Collaborative working (3460)</a></li>
+
+                                                            <li><a href="/g-cloud/search?serviceCategories=creative+design+and+publishing&amp;lot=cloud-software">Creative, design and publishing (1415)</a></li>
+
+                                                            <li><a href="/g-cloud/search?serviceCategories=customer+relationship+management+%28crm%29&amp;lot=cloud-software">Customer relationship management (CRM) (1861)</a></li>
+
+                                                            <li><a href="/g-cloud/search?serviceCategories=electronic+document+and+records+management+%28edrm%29&amp;lot=cloud-software">Electronic document and records management (EDRM) (2061)</a></li>
+
+                                                            <li><a href="/g-cloud/search?serviceCategories=healthcare&amp;lot=cloud-software">Healthcare (874)</a></li>
+
+                                                            <li><a href="/g-cloud/search?serviceCategories=human+resources+and+employee+management&amp;lot=cloud-software">Human resources and employee management (1773)</a></li>
+
+                                                            <li><a href="/g-cloud/search?serviceCategories=information+and+communications+technology+%28ict%29&amp;lot=cloud-software">Information and communications technology (ICT) (4445)</a></li>
+
+                                                            <li><a href="/g-cloud/search?serviceCategories=legal+and+enforcement&amp;lot=cloud-software">Legal and enforcement (550)</a></li>
+
+                                                            <li><a href="/g-cloud/search?serviceCategories=marketing&amp;lot=cloud-software">Marketing (1526)</a></li>
+
+                                                            <li><a href="/g-cloud/search?serviceCategories=operations+management&amp;lot=cloud-software">Operations management (2889)</a></li>
+
+                                                            <li><a href="/g-cloud/search?serviceCategories=project+management+and+planning&amp;lot=cloud-software">Project management and planning (1616)</a></li>
+
+                                                            <li><a href="/g-cloud/search?serviceCategories=sales&amp;lot=cloud-software">Sales (606)</a></li>
+
+                                                            <li><a href="/g-cloud/search?serviceCategories=schools+education+and+libraries&amp;lot=cloud-software">Schools, education and libraries (631)</a></li>
+
+                                                            <li><a href="/g-cloud/search?serviceCategories=software+development+tools&amp;lot=cloud-software">Software development tools (1257)</a></li>
+
+                                                            <li><a href="/g-cloud/search?serviceCategories=transport+and+logistics&amp;lot=cloud-software">Transport and logistics (564)</a></li>
+
+                                                        </ul>
+
+                                                    </li>
+
+                                                </ul>
+
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" name="lot" value="cloud-software">
+
+                                <div class="dm-filters">
+                                    <div class="dm-filter-title">
+                                        <h2 class="apply-filters-title">Apply filters</h2>
+                                        <a id="dm-clear-all-filters" class="clear-filters-link" href="/g-cloud/search?lot=cloud-software">Clear filters</a>
+                                    </div>
+                                    <div>
+
+                                        <div class="govuk-option-select js-collapsible">
+                                            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="">
+                                                <div class="option-select-label">Cloud deployment model</div>
+                                                <div class="js-selected-counter"></div>
+                                            </button>
+                                            <div class="options-container" id="">
+                                                <div class="js-auto-height-inner">
+
+                                                    <label for="cloudDeploymentModel-public">
+                                                        <input name="cloudDeploymentModel" value="public" id="cloudDeploymentModel-public" type="checkbox" aria-controls=""> Public cloud
+                                                    </label>
+
+                                                    <label for="cloudDeploymentModel-private">
+                                                        <input name="cloudDeploymentModel" value="private" id="cloudDeploymentModel-private" type="checkbox" aria-controls=""> Private cloud
+                                                    </label>
+
+                                                    <label for="cloudDeploymentModel-community">
+                                                        <input name="cloudDeploymentModel" value="community" id="cloudDeploymentModel-community" type="checkbox" aria-controls=""> Community cloud
+                                                    </label>
+
+                                                    <label for="cloudDeploymentModel-hybrid">
+                                                        <input name="cloudDeploymentModel" value="hybrid" id="cloudDeploymentModel-hybrid" type="checkbox" aria-controls=""> Hybrid cloud
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="govuk-option-select js-collapsible">
+                                            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="">
+                                                <div class="option-select-label">Supplier type</div>
+                                                <div class="js-selected-counter"></div>
+                                            </button>
+                                            <div class="options-container" id="">
+                                                <div class="js-auto-height-inner">
+
+                                                    <label for="resellingType-not_reseller">
+                                                        <input name="resellingType" value="not_reseller" id="resellingType-not_reseller" type="checkbox" aria-controls=""> Not a reseller
+                                                    </label>
+
+                                                    <label for="resellingType-reseller_extra_features_and_support">
+                                                        <input name="resellingType" value="reseller_extra_features_and_support" id="resellingType-reseller_extra_features_and_support" type="checkbox" aria-controls=""> Reseller providing extra features and support
+                                                    </label>
+
+                                                    <label for="resellingType-reseller_extra_support">
+                                                        <input name="resellingType" value="reseller_extra_support" id="resellingType-reseller_extra_support" type="checkbox" aria-controls=""> Reseller providing extra support
+                                                    </label>
+
+                                                    <label for="resellingType-reseller_no_extras">
+                                                        <input name="resellingType" value="reseller_no_extras" id="resellingType-reseller_no_extras" type="checkbox" aria-controls=""> Reseller (no extras)
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="govuk-option-select js-collapsible">
+                                            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="">
+                                                <div class="option-select-label">User support</div>
+                                                <div class="js-selected-counter"></div>
+                                            </button>
+                                            <div class="options-container" id="">
+                                                <div class="js-auto-height-inner">
+
+                                                    <label for="emailOrTicketingSupport-yes">
+                                                        <input name="emailOrTicketingSupport" value="yes" id="emailOrTicketingSupport-yes" type="checkbox" aria-controls=""> Email or online ticketing
+                                                    </label>
+
+                                                    <label for="phoneSupport">
+                                                        <input name="phoneSupport" value="true" id="phoneSupport" type="checkbox" aria-controls=""> Phone
+                                                    </label>
+
+                                                    <label for="webChatSupport-yes">
+                                                        <input name="webChatSupport" value="yes" id="webChatSupport-yes" type="checkbox" aria-controls=""> Web chat
+                                                    </label>
+
+                                                    <label for="onsiteSupport-yes">
+                                                        <input name="onsiteSupport" value="yes" id="onsiteSupport-yes" type="checkbox" aria-controls=""> Onsite support
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="govuk-option-select js-collapsible">
+                                            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="">
+                                                <div class="option-select-label">Using the service</div>
+                                                <div class="js-selected-counter"></div>
+                                            </button>
+                                            <div class="options-container" id="">
+                                                <div class="js-auto-height-inner">
+
+                                                    <label for="browsersAccess">
+                                                        <input name="browsersAccess" value="true" id="browsersAccess" type="checkbox" aria-controls=""> Web browser interface
+                                                    </label>
+
+                                                    <label for="installation">
+                                                        <input name="installation" value="true" id="installation" type="checkbox" aria-controls=""> Application to install
+                                                    </label>
+
+                                                    <label for="mobile">
+                                                        <input name="mobile" value="true" id="mobile" type="checkbox" aria-controls=""> Mobile devices
+                                                    </label>
+
+                                                    <label for="APISoftware">
+                                                        <input name="APISoftware" value="true" id="APISoftware" type="checkbox" aria-controls=""> API
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="govuk-option-select js-collapsible">
+                                            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="">
+                                                <div class="option-select-label">Metrics reporting</div>
+                                                <div class="js-selected-counter"></div>
+                                            </button>
+                                            <div class="options-container" id="">
+                                                <div class="js-auto-height-inner">
+
+                                                    <label for="metricsHow-api">
+                                                        <input name="metricsHow" value="api" id="metricsHow-api" type="checkbox" aria-controls=""> API access
+                                                    </label>
+
+                                                    <label for="metricsHow-real_time">
+                                                        <input name="metricsHow" value="real_time" id="metricsHow-real_time" type="checkbox" aria-controls=""> Real-time dashboards
+                                                    </label>
+
+                                                    <label for="metricsHow-regular_reports">
+                                                        <input name="metricsHow" value="regular_reports" id="metricsHow-regular_reports" type="checkbox" aria-controls=""> Regular reports
+                                                    </label>
+
+                                                    <label for="metricsHow-on_request">
+                                                        <input name="metricsHow" value="on_request" id="metricsHow-on_request" type="checkbox" aria-controls=""> Reports on request
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="govuk-option-select js-collapsible">
+                                            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="">
+                                                <div class="option-select-label">Connected public sector networks</div>
+                                                <div class="js-selected-counter"></div>
+                                            </button>
+                                            <div class="options-container" id="">
+                                                <div class="js-auto-height-inner">
+
+                                                    <label for="publicSectorNetworksTypes-psn">
+                                                        <input name="publicSectorNetworksTypes" value="psn" id="publicSectorNetworksTypes-psn" type="checkbox" aria-controls=""> Public Services Network (PSN)
+                                                    </label>
+
+                                                    <label for="publicSectorNetworksTypes-pnn">
+                                                        <input name="publicSectorNetworksTypes" value="pnn" id="publicSectorNetworksTypes-pnn" type="checkbox" aria-controls=""> Police National Network (PNN)
+                                                    </label>
+
+                                                    <label for="publicSectorNetworksTypes-n3">
+                                                        <input name="publicSectorNetworksTypes" value="n3" id="publicSectorNetworksTypes-n3" type="checkbox" aria-controls=""> New NHS Network (N3)
+                                                    </label>
+
+                                                    <label for="publicSectorNetworksTypes-janet">
+                                                        <input name="publicSectorNetworksTypes" value="janet" id="publicSectorNetworksTypes-janet" type="checkbox" aria-controls=""> Joint Academic Network (JANET)
+                                                    </label>
+
+                                                    <label for="publicSectorNetworksTypes-swan">
+                                                        <input name="publicSectorNetworksTypes" value="swan" id="publicSectorNetworksTypes-swan" type="checkbox" aria-controls=""> Scottish Wide Area Network (SWAN)
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="govuk-option-select js-collapsible">
+                                            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="">
+                                                <div class="option-select-label">Data protection between buyer and supplier networks</div>
+                                                <div class="js-selected-counter"></div>
+                                            </button>
+                                            <div class="options-container" id="">
+                                                <div class="js-auto-height-inner">
+
+                                                    <label for="dataProtectionBetweenNetworks-private_or_psn">
+                                                        <input name="dataProtectionBetweenNetworks" value="private_or_psn" id="dataProtectionBetweenNetworks-private_or_psn" type="checkbox" aria-controls=""> Private network or public sector network
+                                                    </label>
+
+                                                    <label for="dataProtectionBetweenNetworks-tls">
+                                                        <input name="dataProtectionBetweenNetworks" value="tls" id="dataProtectionBetweenNetworks-tls" type="checkbox" aria-controls=""> TLS (version 1.2 or above)
+                                                    </label>
+
+                                                    <label for="dataProtectionBetweenNetworks-ipsec_or_vpn">
+                                                        <input name="dataProtectionBetweenNetworks" value="ipsec_or_vpn" id="dataProtectionBetweenNetworks-ipsec_or_vpn" type="checkbox" aria-controls=""> IPsec or TLS VPN gateway
+                                                    </label>
+
+                                                    <label for="dataProtectionBetweenNetworks-bonded_fibre">
+                                                        <input name="dataProtectionBetweenNetworks" value="bonded_fibre" id="dataProtectionBetweenNetworks-bonded_fibre" type="checkbox" aria-controls=""> Bonded fibre optic connections
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="govuk-option-select js-collapsible">
+                                            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="">
+                                                <div class="option-select-label">Data protection within supplier network</div>
+                                                <div class="js-selected-counter"></div>
+                                            </button>
+                                            <div class="options-container" id="">
+                                                <div class="js-auto-height-inner">
+
+                                                    <label for="dataProtectionWithinNetwork-tls">
+                                                        <input name="dataProtectionWithinNetwork" value="tls" id="dataProtectionWithinNetwork-tls" type="checkbox" aria-controls=""> TLS (version 1.2 or above)
+                                                    </label>
+
+                                                    <label for="dataProtectionWithinNetwork-ipsec_or_vpn">
+                                                        <input name="dataProtectionWithinNetwork" value="ipsec_or_vpn" id="dataProtectionWithinNetwork-ipsec_or_vpn" type="checkbox" aria-controls=""> IPsec or TLS VPN gateway
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="govuk-option-select js-collapsible">
+                                            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="">
+                                                <div class="option-select-label">Data storage and processing locations</div>
+                                                <div class="js-selected-counter"></div>
+                                            </button>
+                                            <div class="options-container" id="">
+                                                <div class="js-auto-height-inner">
+
+                                                    <label for="dataStorageAndProcessingLocations-uk">
+                                                        <input name="dataStorageAndProcessingLocations" value="uk" id="dataStorageAndProcessingLocations-uk" type="checkbox" aria-controls=""> United Kingdom
+                                                    </label>
+
+                                                    <label for="dataStorageAndProcessingLocations-eea">
+                                                        <input name="dataStorageAndProcessingLocations" value="eea" id="dataStorageAndProcessingLocations-eea" type="checkbox" aria-controls=""> European Economic Area (EEA)
+                                                    </label>
+
+                                                    <label for="dataStorageAndProcessingLocations-privacy_shield">
+                                                        <input name="dataStorageAndProcessingLocations" value="privacy_shield" id="dataStorageAndProcessingLocations-privacy_shield" type="checkbox" aria-controls=""> EU-US Privacy Shield agreement locations
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="govuk-option-select js-collapsible">
+                                            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="">
+                                                <div class="option-select-label">User authentication</div>
+                                                <div class="js-selected-counter"></div>
+                                            </button>
+                                            <div class="options-container" id="">
+                                                <div class="js-auto-height-inner">
+
+                                                    <label for="userAuthentication-two_factor">
+                                                        <input name="userAuthentication" value="two_factor" id="userAuthentication-two_factor" type="checkbox" aria-controls=""> 2-factor authentication
+                                                    </label>
+
+                                                    <label for="userAuthentication-pka">
+                                                        <input name="userAuthentication" value="pka" id="userAuthentication-pka" type="checkbox" aria-controls=""> Public key authentication (including by TLS client certificate)
+                                                    </label>
+
+                                                    <label for="userAuthentication-identity_federation">
+                                                        <input name="userAuthentication" value="identity_federation" id="userAuthentication-identity_federation" type="checkbox" aria-controls=""> Identity federation with existing provider (for example Google Apps)
+                                                    </label>
+
+                                                    <label for="userAuthentication-government_network">
+                                                        <input name="userAuthentication" value="government_network" id="userAuthentication-government_network" type="checkbox" aria-controls=""> Limited access network (for example PSN)
+                                                    </label>
+
+                                                    <label for="userAuthentication-dedicated_link">
+                                                        <input name="userAuthentication" value="dedicated_link" id="userAuthentication-dedicated_link" type="checkbox" aria-controls=""> Dedicated link (for example VPN)
+                                                    </label>
+
+                                                    <label for="userAuthentication-username_or_password">
+                                                        <input name="userAuthentication" value="username_or_password" id="userAuthentication-username_or_password" type="checkbox" aria-controls=""> Username or password
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="govuk-option-select js-collapsible">
+                                            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="">
+                                                <div class="option-select-label">Management access authentication</div>
+                                                <div class="js-selected-counter"></div>
+                                            </button>
+                                            <div class="options-container" id="">
+                                                <div class="js-auto-height-inner">
+
+                                                    <label for="managementAccessAuthentication-two_factor">
+                                                        <input name="managementAccessAuthentication" value="two_factor" id="managementAccessAuthentication-two_factor" type="checkbox" aria-controls=""> 2-factor authentication
+                                                    </label>
+
+                                                    <label for="managementAccessAuthentication-public_key">
+                                                        <input name="managementAccessAuthentication" value="public_key" id="managementAccessAuthentication-public_key" type="checkbox" aria-controls=""> Public key authentication (including by TLS client certificate)
+                                                    </label>
+
+                                                    <label for="managementAccessAuthentication-identity_federation">
+                                                        <input name="managementAccessAuthentication" value="identity_federation" id="managementAccessAuthentication-identity_federation" type="checkbox" aria-controls=""> Identity federation with existing provider (for example Google Apps)
+                                                    </label>
+
+                                                    <label for="managementAccessAuthentication-government_network">
+                                                        <input name="managementAccessAuthentication" value="government_network" id="managementAccessAuthentication-government_network" type="checkbox" aria-controls=""> Limited access network (for example PSN)
+                                                    </label>
+
+                                                    <label for="managementAccessAuthentication-dedicated_link">
+                                                        <input name="managementAccessAuthentication" value="dedicated_link" id="managementAccessAuthentication-dedicated_link" type="checkbox" aria-controls=""> Dedicated link (for example VPN)
+                                                    </label>
+
+                                                    <label for="managementAccessAuthentication-username_or_password">
+                                                        <input name="managementAccessAuthentication" value="username_or_password" id="managementAccessAuthentication-username_or_password" type="checkbox" aria-controls=""> Username or password
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="govuk-option-select js-collapsible">
+                                            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="">
+                                                <div class="option-select-label">Security certification</div>
+                                                <div class="js-selected-counter"></div>
+                                            </button>
+                                            <div class="options-container" id="">
+                                                <div class="js-auto-height-inner">
+
+                                                    <label for="standardsISOIEC27001">
+                                                        <input name="standardsISOIEC27001" value="true" id="standardsISOIEC27001" type="checkbox" aria-controls=""> ISO/IEC 27001 (service security)
+                                                    </label>
+
+                                                    <label for="standardsISO28000">
+                                                        <input name="standardsISO28000" value="true" id="standardsISO28000" type="checkbox" aria-controls=""> ISO 28000:2007 (supply chain security)
+                                                    </label>
+
+                                                    <label for="standardsCSASTAR">
+                                                        <input name="standardsCSASTAR" value="true" id="standardsCSASTAR" type="checkbox" aria-controls=""> CSA STAR (service security)
+                                                    </label>
+
+                                                    <label for="standardsPCI">
+                                                        <input name="standardsPCI" value="true" id="standardsPCI" type="checkbox" aria-controls=""> PCI DSS (payment card security)
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="govuk-option-select js-collapsible">
+                                            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="">
+                                                <div class="option-select-label">Security governance standards</div>
+                                                <div class="js-selected-counter"></div>
+                                            </button>
+                                            <div class="options-container" id="">
+                                                <div class="js-auto-height-inner">
+
+                                                    <label for="securityGovernanceStandards-csa_ccm">
+                                                        <input name="securityGovernanceStandards" value="csa_ccm" id="securityGovernanceStandards-csa_ccm" type="checkbox" aria-controls=""> CSA CCM version 3.0
+                                                    </label>
+
+                                                    <label for="securityGovernanceStandards-iso_iec_27001">
+                                                        <input name="securityGovernanceStandards" value="iso_iec_27001" id="securityGovernanceStandards-iso_iec_27001" type="checkbox" aria-controls=""> ISO/IEC 27001
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="govuk-option-select js-collapsible">
+                                            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="">
+                                                <div class="option-select-label">Datacentre security standard</div>
+                                                <div class="js-selected-counter"></div>
+                                            </button>
+                                            <div class="options-container" id="">
+                                                <div class="js-auto-height-inner">
+
+                                                    <label for="datacentreSecurityStandards-recognised_standard">
+                                                        <input name="datacentreSecurityStandards" value="recognised_standard" id="datacentreSecurityStandards-recognised_standard" type="checkbox" aria-controls=""> Complies with a recognised standard (for example CSA CCM version 3.0)
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="govuk-option-select js-collapsible">
+                                            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="">
+                                                <div class="option-select-label">Staff security clearance</div>
+                                                <div class="js-selected-counter"></div>
+                                            </button>
+                                            <div class="options-container" id="">
+                                                <div class="js-auto-height-inner">
+
+                                                    <label for="staffSecurityClearanceChecks-staff_screening_to_bs7858_2012">
+                                                        <input name="staffSecurityClearanceChecks" value="staff_screening_to_bs7858_2012" id="staffSecurityClearanceChecks-staff_screening_to_bs7858_2012" type="checkbox" aria-controls=""> Conforms to BS7858:2012
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="govuk-option-select js-collapsible">
+                                            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="">
+                                                <div class="option-select-label">Minimum government security clearance</div>
+                                                <div class="js-selected-counter"></div>
+                                            </button>
+                                            <div class="options-container" id="">
+                                                <div class="js-auto-height-inner">
+
+                                                    <label for="governmentSecurityClearances-dv">
+                                                        <input name="governmentSecurityClearances" value="dv" id="governmentSecurityClearances-dv" type="checkbox" aria-controls=""> Developed Vetting (DV)
+                                                    </label>
+
+                                                    <label for="governmentSecurityClearances-sc">
+                                                        <input name="governmentSecurityClearances" value="sc" id="governmentSecurityClearances-sc" type="checkbox" aria-controls=""> Security Clearance (SC)
+                                                    </label>
+
+                                                    <label for="governmentSecurityClearances-bpss">
+                                                        <input name="governmentSecurityClearances" value="bpss" id="governmentSecurityClearances-bpss" type="checkbox" aria-controls=""> Baseline Personnel Security Standard (BPSS)
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="govuk-option-select js-collapsible">
+                                            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="">
+                                                <div class="option-select-label">Pricing options</div>
+                                                <div class="js-selected-counter"></div>
+                                            </button>
+                                            <div class="options-container" id="">
+                                                <div class="js-auto-height-inner">
+
+                                                    <label for="educationPricing">
+                                                        <input name="educationPricing" value="true" id="educationPricing" type="checkbox" aria-controls=""> Discount for educational organisations
+                                                    </label>
+
+                                                    <label for="freeVersionTrialOption">
+                                                        <input name="freeVersionTrialOption" value="true" id="freeVersionTrialOption" type="checkbox" aria-controls=""> Free trial
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <button class="button-save js-hidden js-dm-live-search" type="submit">Filter</button>
+                                </div>
+                            </form>
+                        </section>
+                        <section class="column-two-thirds" aria-label="Search results">
+
+                            <div id="js-dm-live-search-summary" class="js-dm-live-search-fade">
+                                <p class="search-summary">
+                                    <span class="search-summary-count">6329</span> results found in <em>Cloud software</em>
+                                    <br/>
+                                    <button class="button btn" href="#" role="button" style="margin:10px 0px 10px">Save Your Search</button>
+                                </p>
+                            </div>
+                            <div id="js-dm-live-search-results" class="js-dm-live-search-fade">
+
+                                <div class="search-result">
+                                    <h2 class="search-result-title">
+                <a href="/g-cloud/services/573948072548345">Agilisys Care - Children's e-Directory, Care, Health, Wellbeing</a>
+            </h2>
+
+                                    <p class="search-result-supplier">
+                                        Agilisys Ltd
+                                    </p>
+
+                                    <p class="search-result-excerpt">
+                                        SDS e-Marketplace is an entry level marketplace with an integrated provider portal enabling providers to load and manage their product/service offers, releasing the LA from the burden of trying to keep up to date with the constantly changing world of solutions. The child friendly interfaces engage both parent &amp; child.
+                                    </p>
+                                    <ul aria-label="tags" class="search-result-metadata">
+                                        <li class="search-result-metadata-item">
+                                            Cloud software
+                                        </li>
+                                        <li class="search-result-metadata-item">
+                                            G-Cloud 9
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="search-result">
+                                    <h2 class="search-result-title">
+                <a href="/g-cloud/services/195087945040228">Agilisys Care - Information &amp; Advice</a>
+            </h2>
+
+                                    <p class="search-result-supplier">
+                                        Agilisys Ltd
+                                    </p>
+
+                                    <p class="search-result-excerpt">
+                                        Information &amp; Advice portal, with over 250 pages of ready-made content comprehensively covers ASC and Personal Budgets. Includes: Built-in Search, language translation, Financial Contribution Assessments for Home and Residential based on National Guidelines, Integrated links with over 100 National organizations. Multiple directories for Local providers, activities, and events.
+                                    </p>
+                                    <ul aria-label="tags" class="search-result-metadata">
+                                        <li class="search-result-metadata-item">
+                                            Cloud software
+                                        </li>
+                                        <li class="search-result-metadata-item">
+                                            G-Cloud 9
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="search-result">
+                                    <h2 class="search-result-title">
+                <a href="/g-cloud/services/953440279325884">Agilisys Care - Care &amp; Support Planning Tool</a>
+            </h2>
+
+                                    <p class="search-result-supplier">
+                                        Agilisys Ltd
+                                    </p>
+
+                                    <p class="search-result-excerpt">
+                                        Agilisys Care’s Planning Tool ensures the user has a clear view of the essential elements that make up a transparent and accountable support plan: their equipment needs, their PB/iPB, carer’s sustainability (plus any carer-related funding), expected outcomes and discussion about who to employ and which services meet their needs.
+                                    </p>
+                                    <ul aria-label="tags" class="search-result-metadata">
+                                        <li class="search-result-metadata-item">
+                                            Cloud software
+                                        </li>
+                                        <li class="search-result-metadata-item">
+                                            G-Cloud 9
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="search-result">
+                                    <h2 class="search-result-title">
+                <a href="/g-cloud/services/588279847474150">CXAIR - Search powered Business Analytics</a>
+            </h2>
+
+                                    <p class="search-result-supplier">
+                                        Agilisys Ltd
+                                    </p>
+
+                                    <p class="search-result-excerpt">
+                                        CXAIR is a data warehousing, data management and business intelligence app built for the public sector. CXAIR uses 'search technology' to allow users to manage, query and report on data from a single web-based portal. CXAIR is compliant with all relevant IG standards and is used in 200+ organisations worldwide.
+                                    </p>
+                                    <ul aria-label="tags" class="search-result-metadata">
+                                        <li class="search-result-metadata-item">
+                                            Cloud software
+                                        </li>
+                                        <li class="search-result-metadata-item">
+                                            G-Cloud 9
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="search-result">
+                                    <h2 class="search-result-title">
+                <a href="/g-cloud/services/975490817601191">Business Intelligence software as a service</a>
+            </h2>
+
+                                    <p class="search-result-supplier">
+                                        Acuma Solutions Limited
+                                    </p>
+
+                                    <p class="search-result-excerpt">
+                                        Acuma’s Business Intelligence Service provides cost effective services for the implementation of enterprise level data discovery, reporting and data analysis solutions. The platforms that can be deployed are based on standard industry-leading software although customers are able to select alternative products if required.
+                                    </p>
+                                    <ul aria-label="tags" class="search-result-metadata">
+                                        <li class="search-result-metadata-item">
+                                            Cloud software
+                                        </li>
+                                        <li class="search-result-metadata-item">
+                                            G-Cloud 9
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <nav role="navigation">
+                                    <ul class="previous-next-navigation">
+
+                                        <li class="next">
+                                            <a href="/g-cloud/search?page=2&amp;lot=cloud-software">
+                        Next <span class="visuallyhidden">page</span>
+                        <span class="page-numbers">2 of 64</span>
+                    </a>
+                                        </li>
+
+                                    </ul>
+                                </nav>
+                            </div>
+                        </section>
+                    </div>
+
+                </main>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
+
+

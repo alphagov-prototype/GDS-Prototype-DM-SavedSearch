@@ -18,3 +18,8 @@ gulp.task('copy-documentation-assets', function () {
     config.paths.docsAssets + '/**'])
   .pipe(gulp.dest(config.paths.public))
 })
+
+gulp.task('copy-static-assets', function () {
+  return gulp.src([config.paths.assets + 'images/**'])
+  .pipe(gulp.dest(config.paths.static + 'images/'))
+})
