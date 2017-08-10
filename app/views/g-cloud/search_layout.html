@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Digital Marketplace
+{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="/public/css/dm-application.css">
+{% endblock %}
+
+{% block content %}
+{% include "includes/phase_banner_prototype.html" %}
+
+<div id="global-breadcrumb" class="header-context">
+  <nav>
+    <ol class="group" role="breadcrumbs">
+        <li><a href="/">Digital Marketplace</a></li>
+        
+      
+        <li><a href="/g-cloud">Cloud hosting, software and support</a></li>
+        
+      
+        <li>Cloud software</li>
+        
+      
+    </ol>
+  </nav>
+</div>
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-full">
+      <div id="wrapper">
+        <main id="content" role="main">
+          <header class="page-heading">
+            <h1>Search results</h1>
+          </header>
+          <div class="grid-row" id="js-dm-live-search-wrapper">
+            {% block search_content %}{% endblock %}
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+

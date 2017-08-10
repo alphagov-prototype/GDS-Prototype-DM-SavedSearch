@@ -1,0 +1,212 @@
+<div class="dm-filters">
+    <div class="dm-filter-title">
+        <h2 class="apply-filters-title">Apply filters</h2><a class="clear-filters-link" href="/g-cloud/search?lot=cloud-software" id="dm-clear-all-filters">Clear filters</a>
+    </div>
+    <div>
+        <div class="govuk-option-select js-collapsible">
+        <button aria-controls="" aria-expanded="false" class="js-container-head" type="button">
+        <div class="option-select-label">
+            Cloud deployment model
+        </div>
+        <div class="js-selected-counter"></div></button>
+        <div class="options-container" id="">
+            <div class="js-auto-height-inner">
+            <label for="cloudDeploymentModel-public"><input aria-controls="" id="cloudDeploymentModel-public" name="cloudDeploymentModel" type="checkbox" value="public" {% if filter_selected %}checked="checked"{% endif %} > Public cloud</label> <label for="cloudDeploymentModel-private"><input aria-controls="" id="cloudDeploymentModel-private" name="cloudDeploymentModel" type="checkbox" value="private"> Private cloud</label> <label for="cloudDeploymentModel-community"><input aria-controls="" id="cloudDeploymentModel-community" name="cloudDeploymentModel" type="checkbox" value="community"> Community cloud</label> <label for="cloudDeploymentModel-hybrid"><input aria-controls="" id="cloudDeploymentModel-hybrid" name="cloudDeploymentModel" type="checkbox" value="hybrid"> Hybrid cloud</label>
+            </div>
+        </div>
+        </div>
+        <div class="govuk-option-select js-collapsible">
+        <button aria-controls="" aria-expanded="false" class="js-container-head" type="button">
+        <div class="option-select-label">
+            Supplier type
+        </div>
+        <div class="js-selected-counter"></div></button>
+        <div class="options-container" id="">
+            <div class="js-auto-height-inner">
+            <label for="resellingType-not_reseller"><input aria-controls="" id="resellingType-not_reseller" name="resellingType" type="checkbox" value="not_reseller"> Not a reseller</label> <label for="resellingType-reseller_extra_features_and_support"><input aria-controls="" id="resellingType-reseller_extra_features_and_support" name="resellingType" type="checkbox" value="reseller_extra_features_and_support"> Reseller providing extra features and support</label> <label for="resellingType-reseller_extra_support"><input aria-controls="" id="resellingType-reseller_extra_support" name="resellingType" type="checkbox" value="reseller_extra_support"> Reseller providing extra support</label> <label for="resellingType-reseller_no_extras"><input aria-controls="" id="resellingType-reseller_no_extras" name="resellingType" type="checkbox" value="reseller_no_extras"> Reseller (no extras)</label>
+            </div>
+        </div>
+        </div>
+        <div class="govuk-option-select js-collapsible">
+        <button aria-controls="" aria-expanded="false" class="js-container-head" type="button">
+        <div class="option-select-label">
+            User support
+        </div>
+        <div class="js-selected-counter"></div></button>
+        <div class="options-container" id="">
+            <div class="js-auto-height-inner">
+            <label for="emailOrTicketingSupport-yes"><input aria-controls="" id="emailOrTicketingSupport-yes" name="emailOrTicketingSupport" type="checkbox" value="yes"> Email or online ticketing</label> <label for="phoneSupport"><input aria-controls="" id="phoneSupport" name="phoneSupport" type="checkbox" value="true"> Phone</label> <label for="webChatSupport-yes"><input aria-controls="" id="webChatSupport-yes" name="webChatSupport" type="checkbox" value="yes"> Web chat</label> <label for="onsiteSupport-yes"><input aria-controls="" id="onsiteSupport-yes" name="onsiteSupport" type="checkbox" value="yes"> Onsite support</label>
+            </div>
+        </div>
+        </div>
+        <div class="govuk-option-select js-collapsible">
+        <button aria-controls="" aria-expanded="false" class="js-container-head" type="button">
+        <div class="option-select-label">
+            Using the service
+        </div>
+        <div class="js-selected-counter"></div></button>
+        <div class="options-container" id="">
+            <div class="js-auto-height-inner">
+            <label for="browsersAccess"><input aria-controls="" id="browsersAccess" name="browsersAccess" type="checkbox" value="true"> Web browser interface</label> <label for="installation"><input aria-controls="" id="installation" name="installation" type="checkbox" value="true"> Application to install</label> <label for="mobile"><input aria-controls="" id="mobile" name="mobile" type="checkbox" value="true"> Mobile devices</label> <label for="APISoftware"><input aria-controls="" id="APISoftware" name="APISoftware" type="checkbox" value="true"> API</label>
+            </div>
+        </div>
+        </div>
+        <div class="govuk-option-select js-collapsible">
+        <button aria-controls="" aria-expanded="false" class="js-container-head" type="button">
+        <div class="option-select-label">
+            Metrics reporting
+        </div>
+        <div class="js-selected-counter"></div></button>
+        <div class="options-container" id="">
+            <div class="js-auto-height-inner">
+            <label for="metricsHow-api"><input aria-controls="" id="metricsHow-api" name="metricsHow" type="checkbox" value="api"> API access</label> <label for="metricsHow-real_time"><input aria-controls="" id="metricsHow-real_time" name="metricsHow" type="checkbox" value="real_time"> Real-time dashboards</label> <label for="metricsHow-regular_reports"><input aria-controls="" id="metricsHow-regular_reports" name="metricsHow" type="checkbox" value="regular_reports"> Regular reports</label> <label for="metricsHow-on_request"><input aria-controls="" id="metricsHow-on_request" name="metricsHow" type="checkbox" value="on_request"> Reports on request</label>
+            </div>
+        </div>
+        </div>
+        <div class="govuk-option-select js-collapsible">
+        <button aria-controls="" aria-expanded="false" class="js-container-head" type="button">
+        <div class="option-select-label">
+            Connected public sector networks
+        </div>
+        <div class="js-selected-counter"></div></button>
+        <div class="options-container" id="">
+            <div class="js-auto-height-inner">
+            <label for="publicSectorNetworksTypes-psn"><input aria-controls="" id="publicSectorNetworksTypes-psn" name="publicSectorNetworksTypes" type="checkbox" value="psn"> Public Services Network (PSN)</label> <label for="publicSectorNetworksTypes-pnn"><input aria-controls="" id="publicSectorNetworksTypes-pnn" name="publicSectorNetworksTypes" type="checkbox" value="pnn"> Police National Network (PNN)</label> <label for="publicSectorNetworksTypes-n3"><input aria-controls="" id="publicSectorNetworksTypes-n3" name="publicSectorNetworksTypes" type="checkbox" value="n3"> New NHS Network (N3)</label> <label for="publicSectorNetworksTypes-janet"><input aria-controls="" id="publicSectorNetworksTypes-janet" name="publicSectorNetworksTypes" type="checkbox" value="janet"> Joint Academic Network (JANET)</label> <label for="publicSectorNetworksTypes-swan"><input aria-controls="" id="publicSectorNetworksTypes-swan" name="publicSectorNetworksTypes" type="checkbox" value="swan"> Scottish Wide Area Network (SWAN)</label>
+            </div>
+        </div>
+        </div>
+        <div class="govuk-option-select js-collapsible">
+        <button aria-controls="" aria-expanded="false" class="js-container-head" type="button">
+        <div class="option-select-label">
+            Data protection between buyer and supplier networks
+        </div>
+        <div class="js-selected-counter"></div></button>
+        <div class="options-container" id="">
+            <div class="js-auto-height-inner">
+            <label for="dataProtectionBetweenNetworks-private_or_psn"><input aria-controls="" id="dataProtectionBetweenNetworks-private_or_psn" name="dataProtectionBetweenNetworks" type="checkbox" value="private_or_psn"> Private network or public sector network</label> <label for="dataProtectionBetweenNetworks-tls"><input aria-controls="" id="dataProtectionBetweenNetworks-tls" name="dataProtectionBetweenNetworks" type="checkbox" value="tls"> TLS (version 1.2 or above)</label> <label for="dataProtectionBetweenNetworks-ipsec_or_vpn"><input aria-controls="" id="dataProtectionBetweenNetworks-ipsec_or_vpn" name="dataProtectionBetweenNetworks" type="checkbox" value="ipsec_or_vpn"> IPsec or TLS VPN gateway</label> <label for="dataProtectionBetweenNetworks-bonded_fibre"><input aria-controls="" id="dataProtectionBetweenNetworks-bonded_fibre" name="dataProtectionBetweenNetworks" type="checkbox" value="bonded_fibre"> Bonded fibre optic connections</label>
+            </div>
+        </div>
+        </div>
+        <div class="govuk-option-select js-collapsible">
+        <button aria-controls="" aria-expanded="false" class="js-container-head" type="button">
+        <div class="option-select-label">
+            Data protection within supplier network
+        </div>
+        <div class="js-selected-counter"></div></button>
+        <div class="options-container" id="">
+            <div class="js-auto-height-inner">
+            <label for="dataProtectionWithinNetwork-tls"><input aria-controls="" id="dataProtectionWithinNetwork-tls" name="dataProtectionWithinNetwork" type="checkbox" value="tls"> TLS (version 1.2 or above)</label> <label for="dataProtectionWithinNetwork-ipsec_or_vpn"><input aria-controls="" id="dataProtectionWithinNetwork-ipsec_or_vpn" name="dataProtectionWithinNetwork" type="checkbox" value="ipsec_or_vpn"> IPsec or TLS VPN gateway</label>
+            </div>
+        </div>
+        </div>
+        <div class="govuk-option-select js-collapsible">
+        <button aria-controls="" aria-expanded="false" class="js-container-head" type="button">
+        <div class="option-select-label">
+            Data storage and processing locations
+        </div>
+        <div class="js-selected-counter"></div></button>
+        <div class="options-container" id="">
+            <div class="js-auto-height-inner">
+            <label for="dataStorageAndProcessingLocations-uk"><input aria-controls="" id="dataStorageAndProcessingLocations-uk" name="dataStorageAndProcessingLocations" type="checkbox" value="uk"> United Kingdom</label> <label for="dataStorageAndProcessingLocations-eea"><input aria-controls="" id="dataStorageAndProcessingLocations-eea" name="dataStorageAndProcessingLocations" type="checkbox" value="eea"> European Economic Area (EEA)</label> <label for="dataStorageAndProcessingLocations-privacy_shield"><input aria-controls="" id="dataStorageAndProcessingLocations-privacy_shield" name="dataStorageAndProcessingLocations" type="checkbox" value="privacy_shield"> EU-US Privacy Shield agreement locations</label>
+            </div>
+        </div>
+        </div>
+        <div class="govuk-option-select js-collapsible">
+        <button aria-controls="" aria-expanded="false" class="js-container-head" type="button">
+        <div class="option-select-label">
+            User authentication
+        </div>
+        <div class="js-selected-counter"></div></button>
+        <div class="options-container" id="">
+            <div class="js-auto-height-inner">
+            <label for="userAuthentication-two_factor"><input aria-controls="" id="userAuthentication-two_factor" name="userAuthentication" type="checkbox" value="two_factor"> 2-factor authentication</label> <label for="userAuthentication-pka"><input aria-controls="" id="userAuthentication-pka" name="userAuthentication" type="checkbox" value="pka"> Public key authentication (including by TLS client certificate)</label> <label for="userAuthentication-identity_federation"><input aria-controls="" id="userAuthentication-identity_federation" name="userAuthentication" type="checkbox" value="identity_federation"> Identity federation with existing provider (for example Google Apps)</label> <label for="userAuthentication-government_network"><input aria-controls="" id="userAuthentication-government_network" name="userAuthentication" type="checkbox" value="government_network"> Limited access network (for example PSN)</label> <label for="userAuthentication-dedicated_link"><input aria-controls="" id="userAuthentication-dedicated_link" name="userAuthentication" type="checkbox" value="dedicated_link"> Dedicated link (for example VPN)</label> <label for="userAuthentication-username_or_password"><input aria-controls="" id="userAuthentication-username_or_password" name="userAuthentication" type="checkbox" value="username_or_password"> Username or password</label>
+            </div>
+        </div>
+        </div>
+        <div class="govuk-option-select js-collapsible">
+        <button aria-controls="" aria-expanded="false" class="js-container-head" type="button">
+        <div class="option-select-label">
+            Management access authentication
+        </div>
+        <div class="js-selected-counter"></div></button>
+        <div class="options-container" id="">
+            <div class="js-auto-height-inner">
+            <label for="managementAccessAuthentication-two_factor"><input aria-controls="" id="managementAccessAuthentication-two_factor" name="managementAccessAuthentication" type="checkbox" value="two_factor"> 2-factor authentication</label> <label for="managementAccessAuthentication-public_key"><input aria-controls="" id="managementAccessAuthentication-public_key" name="managementAccessAuthentication" type="checkbox" value="public_key"> Public key authentication (including by TLS client certificate)</label> <label for="managementAccessAuthentication-identity_federation"><input aria-controls="" id="managementAccessAuthentication-identity_federation" name="managementAccessAuthentication" type="checkbox" value="identity_federation"> Identity federation with existing provider (for example Google Apps)</label> <label for="managementAccessAuthentication-government_network"><input aria-controls="" id="managementAccessAuthentication-government_network" name="managementAccessAuthentication" type="checkbox" value="government_network"> Limited access network (for example PSN)</label> <label for="managementAccessAuthentication-dedicated_link"><input aria-controls="" id="managementAccessAuthentication-dedicated_link" name="managementAccessAuthentication" type="checkbox" value="dedicated_link"> Dedicated link (for example VPN)</label> <label for="managementAccessAuthentication-username_or_password"><input aria-controls="" id="managementAccessAuthentication-username_or_password" name="managementAccessAuthentication" type="checkbox" value="username_or_password"> Username or password</label>
+            </div>
+        </div>
+        </div>
+        <div class="govuk-option-select js-collapsible">
+        <button aria-controls="" aria-expanded="false" class="js-container-head" type="button">
+        <div class="option-select-label">
+            Security certification
+        </div>
+        <div class="js-selected-counter"></div></button>
+        <div class="options-container" id="">
+            <div class="js-auto-height-inner">
+            <label for="standardsISOIEC27001"><input aria-controls="" id="standardsISOIEC27001" name="standardsISOIEC27001" type="checkbox" value="true"> ISO/IEC 27001 (service security)</label> <label for="standardsISO28000"><input aria-controls="" id="standardsISO28000" name="standardsISO28000" type="checkbox" value="true"> ISO 28000:2007 (supply chain security)</label> <label for="standardsCSASTAR"><input aria-controls="" id="standardsCSASTAR" name="standardsCSASTAR" type="checkbox" value="true"> CSA STAR (service security)</label> <label for="standardsPCI"><input aria-controls="" id="standardsPCI" name="standardsPCI" type="checkbox" value="true"> PCI DSS (payment card security)</label>
+            </div>
+        </div>
+        </div>
+        <div class="govuk-option-select js-collapsible">
+        <button aria-controls="" aria-expanded="false" class="js-container-head" type="button">
+        <div class="option-select-label">
+            Security governance standards
+        </div>
+        <div class="js-selected-counter"></div></button>
+        <div class="options-container" id="">
+            <div class="js-auto-height-inner">
+            <label for="securityGovernanceStandards-csa_ccm"><input aria-controls="" id="securityGovernanceStandards-csa_ccm" name="securityGovernanceStandards" type="checkbox" value="csa_ccm"> CSA CCM version 3.0</label> <label for="securityGovernanceStandards-iso_iec_27001"><input aria-controls="" id="securityGovernanceStandards-iso_iec_27001" name="securityGovernanceStandards" type="checkbox" value="iso_iec_27001"> ISO/IEC 27001</label>
+            </div>
+        </div>
+        </div>
+        <div class="govuk-option-select js-collapsible">
+        <button aria-controls="" aria-expanded="false" class="js-container-head" type="button">
+        <div class="option-select-label">
+            Datacentre security standard
+        </div>
+        <div class="js-selected-counter"></div></button>
+        <div class="options-container" id="">
+            <div class="js-auto-height-inner">
+            <label for="datacentreSecurityStandards-recognised_standard"><input aria-controls="" id="datacentreSecurityStandards-recognised_standard" name="datacentreSecurityStandards" type="checkbox" value="recognised_standard"> Complies with a recognised standard (for example CSA CCM version 3.0)</label>
+            </div>
+        </div>
+        </div>
+        <div class="govuk-option-select js-collapsible">
+        <button aria-controls="" aria-expanded="false" class="js-container-head" type="button">
+        <div class="option-select-label">
+            Staff security clearance
+        </div>
+        <div class="js-selected-counter"></div></button>
+        <div class="options-container" id="">
+            <div class="js-auto-height-inner">
+            <label for="staffSecurityClearanceChecks-staff_screening_to_bs7858_2012"><input aria-controls="" id="staffSecurityClearanceChecks-staff_screening_to_bs7858_2012" name="staffSecurityClearanceChecks" type="checkbox" value="staff_screening_to_bs7858_2012"> Conforms to BS7858:2012</label>
+            </div>
+        </div>
+        </div>
+        <div class="govuk-option-select js-collapsible">
+        <button aria-controls="" aria-expanded="false" class="js-container-head" type="button">
+        <div class="option-select-label">
+            Minimum government security clearance
+        </div>
+        <div class="js-selected-counter"></div></button>
+        <div class="options-container" id="">
+            <div class="js-auto-height-inner">
+            <label for="governmentSecurityClearances-dv"><input aria-controls="" id="governmentSecurityClearances-dv" name="governmentSecurityClearances" type="checkbox" value="dv"> Developed Vetting (DV)</label> <label for="governmentSecurityClearances-sc"><input aria-controls="" id="governmentSecurityClearances-sc" name="governmentSecurityClearances" type="checkbox" value="sc"> Security Clearance (SC)</label> <label for="governmentSecurityClearances-bpss"><input aria-controls="" id="governmentSecurityClearances-bpss" name="governmentSecurityClearances" type="checkbox" value="bpss"> Baseline Personnel Security Standard (BPSS)</label>
+            </div>
+        </div>
+        </div>
+        <div class="govuk-option-select js-collapsible">
+        <button aria-controls="" aria-expanded="false" class="js-container-head" type="button">
+        <div class="option-select-label">
+            Pricing options
+        </div>
+        <div class="js-selected-counter"></div></button>
+        <div class="options-container" id="">
+            <div class="js-auto-height-inner">
+            <label for="educationPricing"><input aria-controls="" id="educationPricing" name="educationPricing" type="checkbox" value="true"> Discount for educational organisations</label> <label for="freeVersionTrialOption"><input aria-controls="" id="freeVersionTrialOption" name="freeVersionTrialOption" type="checkbox" value="true"> Free trial</label>
+            </div>
+        </div>
+        </div>
+    </div>
+    <button class="button-save js-hidden js-dm-live-search" type="submit">Filter</button>
+</div>

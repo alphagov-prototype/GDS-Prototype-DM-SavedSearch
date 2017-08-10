@@ -1,0 +1,18 @@
+{% extends "./search_layout.html" %}
+
+{% block search_content %}
+<section aria-label="Search filters" class="column-one-third search-page-filters">
+    <form action="/g-cloud/search" id="js-dm-live-search-form" method="get" name="js-dm-live-search-form">
+    <input type="hidden" name="stage" value="1">
+    {% set search_term = "wallboard" %} 
+    {% set filter_selected = true %} 
+    {% include "./includes/keyword_search.html" %}
+    {% include "./includes/search_results_stage3_categories.html" %}
+    {% include "./includes/filters.html" %}
+    </form>
+</section>
+<section aria-label="Search results" class="column-two-thirds">
+    {% include "./includes/search_results_stage3.html" %}
+</section>
+
+{% endblock %}
