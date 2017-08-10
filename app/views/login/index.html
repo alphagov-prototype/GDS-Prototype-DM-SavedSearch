@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Digital Marketplace
+{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="/public/css/dm-application.css">
+{% endblock %}
+
+{% block content %}
+{% include "includes/phase_banner_prototype.html" %}
+
+<div id="wrapper">
+  <main id="content" role="main">
+    <header class="page-heading page-heading-without-breadcrumb">
+      <h1>Log in to the Digital Marketplace</h1>
+    </header>
+    <form action="/login" autocomplete="off" method="post">
+      <div class="grid-row">
+        <div class="column-full">
+          <div style="display:none;">
+            <input id="csrf_token" name="csrf_token" type="hidden" value="##5c528ca878156dc8be8508807557bfacbbcaf8f0">
+          </div>
+          <div class="question" id="email_address">
+            <label class="question-heading" for="input_email_address">Email address</label>
+            <p class="hint">Enter the email address you used to register with the Digital Marketplace</p><input autocomplete="off" class="text-box" id="input_email_address" name="email_address" type="text" value="">
+          </div>
+          <div class="question" id="password">
+            <label class="question-heading" for="input_password">Password</label> <input autocomplete="off" class="text-box" id="input_password" name="password" type="password" value="">
+          </div>
+          <div class="secondary-action-link">
+            <a href="/reset-password">Forgotten password</a>
+          </div><input class="button-save" type="submit" value="Log in">
+          <div class="secondary-action-link-bigger">
+            <a href="/buyers/create">Create a buyer account</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </main>
+</div>
+
+{% endblock %}
+
+

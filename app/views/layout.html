@@ -20,12 +20,24 @@
             {% if serviceName %} {{ serviceName }} {% endif %}
           {% endblock %}
         </a>
-        <!--
-        <ul id="proposition-links">
-          <li><a href="url-to-page-1" class="active">Navigation item #1</a></li>
-          <li><a href="url-to-page-2">Navigation item #2</a></li>
-        </ul>
-        -->
+        
+
+        {% if session.authenticated == true %}
+          <ul id="proposition-links">
+        
+              <li><a href="/buyers">View your account</a></li>
+              <li><a href="/logout">Log out</a></li>
+            
+          </ul>
+        {% else %}
+          <ul id="proposition-links">
+          
+              <li><a href="/login">Log in</a></li>
+            
+          </ul>
+
+        {% endif %}
+        
       </nav>
     </div>
   </div>

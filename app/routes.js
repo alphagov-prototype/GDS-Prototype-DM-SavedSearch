@@ -1,10 +1,26 @@
 var express = require('express')
 var router = express.Router()
 
+
 // Route index page
 router.get('/', function (req, res) {
   res.render('index')
 })
+
+
+// Route index page
+router.get('/login', function (req, res) {
+  res.render('login/index')
+})
+
+router.get('/buyers/create', function (req, res) {
+  res.render('login/register')
+})
+
+router.post('/buyers/create', function (req, res) {
+  res.render('login/registration_summary')
+})
+
 
 // Route index page
 router.get('/g-cloud', function (req, res) {
@@ -26,11 +42,10 @@ router.get('/g-cloud/search', function (req, res) {
     default:
       res.render('g-cloud/search_stage1');
       break;
-  }
-
-
-  
+  }  
 })
+
+
 
 // add your routes here
 

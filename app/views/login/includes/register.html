@@ -1,0 +1,19 @@
+<div id="wrapper">
+  <main id="content" role="main">
+    <header class="page-heading-smaller page-heading-without-breadcrumb">
+      <h1>Create a buyer account</h1>
+    </header>
+    <p class="lede">You must be employed by, or represent, a public sector organisation.</p>
+    <div class="grid-row">
+      <div class="column-full">
+        <form action="/buyers/create" method="post">
+          <input name="csrf_token" type="hidden" value="##8dc13b1803d897dd7f717742ff9c39e5b05fa401">
+          <div class="question" id="email_address">
+            <label for="input-email_address"><span class="question-heading">Your email address</span></label> <input class="text-box" id="input-email_address" name="email_address" type="text" value="">
+          </div>
+          <p>We will send an account activation email to this address. You will then be able to set your password.</p><input class="button-save" type="submit" value="Create account">
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
