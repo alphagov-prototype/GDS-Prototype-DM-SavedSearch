@@ -1,63 +1,77 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  GOV.UK prototype kit
+  Digital Marketplace
+{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="/public/css/dm-application.css">
 {% endblock %}
 
 {% block content %}
 
-<main id="content" role="main">
-  <div class="grid-row">
-    <div class="column-two-thirds">
+<header class="marketplace-homepage-heading">
 
-      <h1 class="heading-xlarge">
-        The GOV.UK prototype kit
-        <span class="heading-secondary">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
+<div class="phase-banner">
+	<p>
+		<strong class="phase-tag">BETA</strong> This is a <a href="https://www.gov.uk/help/beta">beta service</a>  – please send your feedback to  <a href="mailto:enquiries@digitalmarketplace.service.gov.uk?subject=Digital%20Marketplace%20feedback" title="Please send feedback to enquiries@digitalmarketplace.service.gov.uk">enquiries@digitalmarketplace.service.gov.uk</a>
+	</p>
+</div>
+	<h1>
+		Digital Marketplace
+	</h1>
+</header>
 
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
 
-      <h2 class="heading-medium">About this page</h2>
-
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-			<h2 class="heading-medium">Examples and documentation</h2>
-
-			<ul class="list list-bullet">
-				<li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
-				<li><a href="https://github.com/alphagov/govuk_prototype_kit">GitHub</a></li>
-			</ul>
-
-      <h2 class="heading-medium">Other resources</h2>
-
-			<ul class="list list-bullet">
-				<li>
-					<a href="https://govuk-elements.herokuapp.com/snippets/">
-						Guide to GOV.UK Elements
-					</a>
-				</li>
-				<li>
-					<a href="https://www.gov.uk/service-manual">
-						Service design manual
-					</a>
-				</li>
-				<li>
-					<a href="https://www.gov.uk/design-principles">
-						Government Digital Service Design Principles
-					</a>
-				</li>
-			</ul>
-
-    </div>
-  </div>
-</main>
+<div id="wrapper">
+		<main id="content" role="main">
+			<div class="index-page grid-row">
+				<div class="column-two-thirds">
+					<h2>Find technology or people for digital projects in the public sector</h2>
+					<nav role="navigation">
+						<ul class="browse-list">
+							<li class="browse-list-item">
+								<a class="browse-list-item-link" href="/buyers/frameworks/digital-outcomes-and-specialists-2/requirements/digital-specialists">Find an individual specialist</a>
+								<p class="browse-list-item-body">eg a developer or user researcher</p>
+							</li>
+							<li class="browse-list-item">
+								<a class="browse-list-item-link" href="/buyers/frameworks/digital-outcomes-and-specialists-2/requirements/digital-outcomes">Find a team to provide an outcome</a>
+								<p class="browse-list-item-body">eg a booking system or accessibility audit</p>
+							</li>
+							<li class="browse-list-item">
+								<a class="browse-list-item-link" href="/buyers/frameworks/digital-outcomes-and-specialists-2/requirements/user-research-participants">Find user research participants</a>
+								<p class="browse-list-item-body">eg people from a specific user group to test your service</p>
+							</li>
+							<li class="browse-list-item">
+								<a class="browse-list-item-link" href="/buyers/frameworks/digital-outcomes-and-specialists-2/requirements/user-research-studios">Find a user research lab</a>
+								<p class="browse-list-item-body">eg a room to conduct research sessions</p>
+							</li>
+							<li class="browse-list-item">
+								<a class="browse-list-item-link" href="/g-cloud">Find cloud hosting, software and support</a>
+								<p class="browse-list-item-body">eg content delivery networks or accounting software</p>
+							</li>
+							<li class="browse-list-item">
+								<a class="browse-list-item-link" href="/crown-hosting">Buy physical datacentre space</a>
+								<p class="browse-list-item-body">eg access to mission-critical datacentres</p>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="supplier-messages column-one-third">
+					<aside aria-labelledby="supplier-message-heading" role="complementary">
+						<h2>Sell services</h2>
+						<div class="padding-bottom-small">
+							<p><a class="top-level-link" href="/digital-outcomes-and-specialists/opportunities">View Digital Outcomes and Specialists opportunities</a></p>
+						</div>
+						<div class="padding-bottom-small">
+							<p><a class="top-level-link" href="/suppliers/create">Create a supplier account</a></p>
+							<p>Get updates about opportunities to sell on the Digital Marketplace.</p>
+						</div>
+					</aside>
+				</div>
+			</div>
+		</main>
+	</div>
 
 {% endblock %}
 
