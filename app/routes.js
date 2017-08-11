@@ -62,18 +62,29 @@ router.get('/g-cloud/search', function (req, res) {
 
   var stage = req.query.stage;
 
-  switch( stage )
-  {
-    case "2":
-      res.render('g-cloud/search_stage2');
-      break;
-    case "3":
-      res.render('g-cloud/search_stage3');
-      break;
-    default:
-      res.render('g-cloud/search_stage1');
-      break;
-  }  
+  res.render('g-cloud/search'); 
+})
+
+
+router.get('/g-cloud/search/live', function(req, res){
+  
+  var path = req.url.replace('/g-cloud/search/live','/g-cloud/search');
+  var url = `https://www.digitalmarketplace.service.gov.uk${path}`;
+  
+  var http = require('https');
+  
+  http.get(url, function(http_res) {
+    console.log(http_res);
+    debugger;
+  })
+  .on('end', function(result){
+    console.log(result);
+  })
+  .on('error', function(e) {
+    console.log("Got error: " + e.message);
+  
+  });
+
 })
 
 
