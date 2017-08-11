@@ -61,8 +61,8 @@ router.get('/g-cloud', function (req, res) {
 router.get('/g-cloud/search', function (req, res) {
 
   var lot = req.query.lot;
-
-  res.render('g-cloud/search', {lot: lot}); 
+  var category = req.query.serviceCategories;  
+  res.render('g-cloud/search', {lot: lot, category: category}); 
 })
 
 

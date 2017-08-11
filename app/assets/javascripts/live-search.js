@@ -64,6 +64,8 @@ endpoint response (application/json):
     } else {
       this.$form.find('button.button-save.js-dm-live-search').removeClass('js-hidden');
     }
+
+    this.updateResults();
   }
 
   LiveSearch.init = function() {}
