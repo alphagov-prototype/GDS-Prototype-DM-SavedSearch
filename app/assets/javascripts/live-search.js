@@ -210,4 +210,8 @@ endpoint response (application/json):
 
   // Instantiate an option select for each one found on the page
   var form = new GOVUK.GDM.LiveSearch($('#js-dm-live-search-wrapper'));
+
+  $('#keyword_search_btn').on('click', function(){
+      $('#js-dm-live-search-form').trigger('change');
+  });
 })(jQuery);

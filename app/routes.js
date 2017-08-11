@@ -60,29 +60,22 @@ router.get('/g-cloud', function (req, res) {
 
 router.get('/g-cloud/search', function (req, res) {
 
-  var stage = req.query.stage;
+  var lot = req.query.lot;
 
-  res.render('g-cloud/search'); 
+  res.render('g-cloud/search', {lot: lot}); 
 })
 
 
 router.get('/g-cloud/search/live', function(req, res){
   
   var path = req.url.replace('/g-cloud/search/live','/g-cloud/search');
-  var url = `https://www.digitalmarketplace.service.gov.uk${path}`;
+  var url = `https://www.digitalmarketplace.service.gov.uk${path}&live-results=true`;
   
-  var http = require('https');
+  var getJSON = require('get-json');
   
-  http.get(url, function(http_res) {
-    console.log(http_res);
-    debugger;
-  })
-  .on('end', function(result){
-    console.log(result);
-  })
-  .on('error', function(e) {
-    console.log("Got error: " + e.message);
-  
+  getJSON(url, function(error, response) {
+    res.header('Content-Type', 'application/json');
+    res.send(response);
   });
 
 })
