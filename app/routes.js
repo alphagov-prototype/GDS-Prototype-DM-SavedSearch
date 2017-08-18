@@ -66,7 +66,7 @@ router.get('/g-cloud', function (req, res) {
 router.get('/g-cloud/search', function (req, res) {
   var lot = req.query.lot;
   var category = req.query.serviceCategories;  
-  res.render('g-cloud/search', {lot: lot, category: category}); 
+  res.render('g-cloud/search/index', {lot: lot, category: category}); 
 })
 
 // G-Cloud live search
@@ -79,6 +79,8 @@ router.get('/g-cloud/search/live', function(req, res){
     res.send(response);
   });
 })
+
+
 
 
 module.exports = router
