@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Digital Marketplace
+{% endblock %}
+
+{% block content %}
+{% include "includes/phase_banner_prototype.html" %}
+
+<div id="global-breadcrumb" class="header-context">
+  <nav>
+    <ol class="group" role="breadcrumbs">
+        <li><a href="/">Digital Marketplace</a></li>
+        
+      
+        <li><a href="/g-cloud">Cloud hosting, software and support</a></li>
+        
+      
+        <li><a href="/g-cloud/search">Search</a></li>
+        
+        <li>Save Search</li>
+      
+    </ol>
+  </nav>
+</div>
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-full">
+      <div id="wrapper">
+        <main id="content" role="main">
+          <header class="page-heading">
+            <h1>Save your search</h1>
+          </header>
+          <hr>
+
+          <form action="" method="POST">
+            <div class="form-group">
+              <label class="form-label" for="search-name">Name</label>
+              <input class="form-control" id="search-name" name="search-name" type="text">
+            </div>
+            <div class="form-group">
+              <p>or</p>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="select-box">Select Existing</label>
+              <select class="form-control" id="select-box" name="select-box">
+                <option>select</option>
+                <option value="existing_search_1">Search 1</option>
+                <option value="existing_search_2">Search 2</option>
+                <option value="existing_search_3">Search 3</option>
+              </select>
+            </div>
+            <input class="button" type="submit" value="Save and continue">            
+          </form>
+        </main>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+
