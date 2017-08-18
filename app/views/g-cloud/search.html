@@ -12,6 +12,7 @@
 </section>
 <section aria-label="Search results" class="column-two-thirds">
     <div id="js-dm-live-search-summary" class="js-dm-live-search-fade"></div>
+    <a class="button-save" style="font-size: 18px;" id="saveYourSearch">Save your search</a>
     <div id="js-dm-live-search-results" class="js-dm-live-search-fade"></div>
 </section>
 
@@ -19,4 +20,15 @@
 
 {% block page_scripts %}
 <script src="/public/javascripts/live-search.js"></script>
+<script>
+    /* SAVE YOUR SEARCH REDIRECT */
+    (function(){
+        $('#saveYourSearch').on('click', (e) => {
+            var search_url = `${window.location.pathname}${window.location.search}`;
+            var path = `/g-cloud/search/save-search?search_url=${encodeURIComponent(search_url)}`;
+            window.location.href = path;
+            
+        });
+    })();
+</script>
 {% endblock %}
