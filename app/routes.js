@@ -23,6 +23,17 @@ router.get('/login', function (req, res) {
 //login post
 router.post('/login', function (req, res) {
   req.session.authenticated = true;
+
+  var return_url = req.session.return_url
+
+
+  
+  if (return_url)
+  {
+    req.session.return_url = null   
+    res.redirect(return_url)
+  }
+
   res.redirect('/')
 })
 
@@ -81,6 +92,11 @@ router.get('/g-cloud/search/live', function(req, res){
 
 // G-Cloud save-search page
 router.get('/g-cloud/search/save-search', function (req, res) {
+  if ( req.session.authenticated !== true )
+  {
+    req.session.return_url = req.url;
+    return res.redirect('/login')
+  }
   var search_url = req.query.search_url;
   var existing_searches = req.session.saved_searches;
   res.render('g-cloud/search/save-search/index', { search_url: search_url, existing_searches: req.session.saved_searches }); 
