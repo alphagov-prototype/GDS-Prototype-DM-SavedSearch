@@ -114,6 +114,7 @@ router.post('/g-cloud/search/save-search', function (req, res) {
 
   var existing_search = req.body.existing_search;
   var date_now = Date.now();
+  var _id = '';
   
   var data = {
     name: req.body.search_name,
@@ -126,6 +127,8 @@ router.post('/g-cloud/search/save-search', function (req, res) {
 
   if ( existing_search && existing_search != '' )
   {
+    _id = existing_search;
+
     var audit = {
       name: req.session.saved_searches[ existing_search ].name,
       search_url: req.session.saved_searches[ existing_search ].search_url,
@@ -139,11 +142,12 @@ router.post('/g-cloud/search/save-search', function (req, res) {
   else
   {
     var new_id = guidGenerator();
+    _id = new_id;
     data.created_date = date_now;
     req.session.saved_searches[new_id] = data;
   }
 
-  res.redirect('/buyers/saved-searches')
+  res.redirect(`/buyers/saved-searches/${_id}`)
 })
 
 router.get('/buyers/saved-searches', function (req, res) {
