@@ -25,13 +25,11 @@ router.post('/login', function (req, res) {
   req.session.authenticated = true;
 
   var return_url = req.session.return_url
-
-
   
   if (return_url)
   {
     req.session.return_url = null   
-    res.redirect(return_url)
+    return res.redirect(return_url)
   }
 
   res.redirect('/')
@@ -86,7 +84,7 @@ router.get('/g-cloud/search/live', function(req, res){
   var getJSON = require('get-json');
   getJSON(url, function(error, response) {
     res.header('Content-Type', 'application/json');
-    res.send(response);
+    return res.send(response);
   });
 })
 

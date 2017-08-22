@@ -1,0 +1,40 @@
+<script src="/public/javascripts/live-search.js"></script>
+<script>
+    /* SAVE YOUR SEARCH REDIRECT */
+    (function(){
+        $('#saveYourSearch').on('click', (e) => {
+            var search_url = `${window.location.pathname}${window.location.search}`;
+            var path = `/g-cloud/search/save-search?search_url=${encodeURIComponent(search_url)}`;
+            window.location.href = path;
+        });
+    })();
+
+    /* CHECKBOX FILTERS SELECT */
+    (function(){
+        var checkBox = function( name, value )
+        {
+            $("input[name=" + name + "]input[value='" + value + "']input[type=checkbox]").prop('checked','checked');
+        }
+
+        var filters = {{ query | dump | safe}};
+        for ( var i in filters )
+        {
+            if ( typeof filters[i] == 'object' )
+            {
+                for( var x = 0; x < filters[i].length; x++ )
+                {
+                    checkBox(i, filters[i][x] );
+                }
+            }
+            else
+            {
+                checkBox( i, filters[i] );
+            }
+
+            
+        }
+
+        $("input[type=checkbox]").change();
+    })();
+
+</script>
