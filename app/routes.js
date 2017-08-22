@@ -118,13 +118,21 @@ router.post('/g-cloud/search/save-search', function (req, res) {
   var data = {
     name: req.body.search_name,
     search_url: req.body.search_url,
-    last_modified: date_now
+    last_modified: date_now,
+    history: []
   };
 
   if ( !req.session.saved_searches ) req.session.saved_searches = {};
 
   if ( existing_search && existing_search != '' )
   {
+    var audit = {
+      name: req.session.saved_searches[ existing_search ].name,
+      search_url: req.session.saved_searches[ existing_search ].search_url,
+      created_date: req.session.saved_searches[ existing_search ].last_modified,
+    };
+
+    req.session.saved_searches[ existing_search ].history.push( audit );
     req.session.saved_searches[ existing_search ].search_url = data.search_url;
     req.session.saved_searches[ existing_search ].last_modified = data.last_modified;
   }
