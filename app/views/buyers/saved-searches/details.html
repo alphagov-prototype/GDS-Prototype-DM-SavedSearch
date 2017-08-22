@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Digital Marketplace
+{% endblock %}
+
+{% block content %}
+{% include "includes/phase_banner_prototype.html" %}
+
+<div id="global-breadcrumb" class="header-context">
+  <nav>
+    <ol class="group" role="breadcrumbs">
+        <li><a href="/">Digital Marketplace</a></li>
+        <li><a href="/buyers">Account Details</a></li>
+        <li><a href="/buyers/saved-searches">Saved Searches</a></li>
+        <li>Saved Search Details</li>
+    </ol>
+  </nav>
+</div>
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-full">
+      <div id="wrapper">
+        <main id="content" role="main">
+          <header class="page-heading">
+            <h1>Search Details</h1>
+          </header>
+    
+            <table>
+                <caption class="heading-small">Most Recent Search</caption>
+                <tbody>
+                    <tr>
+                    <td>Name</td>
+                    <td>{{ data.name }}</td>
+                    </tr>
+                    <tr>
+                    <td>Initial search date</td>
+                    <td>{{ data.created_date | unixToReadable }}</td>
+                    </tr>
+                    <tr>
+                    <td>Last modified</td>
+                    <td>{{ data.last_modified | unixToReadable }}</td>
+                    </tr>
+                    <tr>
+                    <td>Search URL</td>
+                    <td><a href="{{ data.search_url }}" target="_blank">Open search in new tab</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table style="margin-top: 30px;">
+                <caption class="heading-small">Previous searches</caption>
+                <thead>
+                    <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Searched date</th>
+                    <th scope="col">Search URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in data.history %}
+                    <tr>
+                        <th scope="row">{{ item.name }}</th>
+                        <td>{{ item.created_date | unixToReadable }}</td>
+                        <td style="max-width: 300px; overflow: hidden;"><a href="{{ item.search_url }}" target="_blank">Open search in new tab</a></td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <th colspan="3">No history</th>
+                    </tr>
+                    {% endfor %}
+                    
+                </tbody>
+            </table>
+            
+
+            
+        </main>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+
