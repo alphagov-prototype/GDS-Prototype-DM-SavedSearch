@@ -1,0 +1,37 @@
+<h1>Saved searches</h1>
+
+<div class="data">
+  <span class="data-item bold-xxlarge">{{ existing_searches | length }}</span>
+  <span class="data-item bold-xsmall">Searches</span>
+</div>
+
+<a href="/g-cloud/search">Perform a new search</a>
+
+{% if ( existing_searches.length != 0 ) %}
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Created Date</th>                
+      <th scope="col">Last Modified Date</th>                
+      <th scope="col">Search URL</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for key, item in existing_searches %}
+    <tr>
+      <th scope="row">{{ item.name }}</th>
+      <td>{{ item.created_date | unixToReadable }}</td>
+      <td>{{ item.last_modified | unixToReadable }}</td>
+      <td style="max-width: 300px; overflow: hidden;"><a href="{{ item.search_url }}" target="_blank">Open search in new tab</a></td>
+      <td><a href="/buyers/saved-searches/{{ key }}">View details</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endif %}
+

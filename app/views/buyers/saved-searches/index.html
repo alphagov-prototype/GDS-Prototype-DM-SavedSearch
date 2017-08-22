@@ -1,37 +1,58 @@
-<h1>Saved searches</h1>
+{% extends "layout.html" %}
 
-<div class="data">
-  <span class="data-item bold-xxlarge">{{ existing_searches | length }}</span>
-  <span class="data-item bold-xsmall">Searches</span>
+{% block page_title %}
+  Digital Marketplace
+{% endblock %}
+
+{% block content %}
+{% include "includes/phase_banner_prototype.html" %}
+
+<div id="global-breadcrumb" class="header-context">
+  <nav>
+    <ol class="group" role="breadcrumbs">
+        <li><a href="/">Digital Marketplace</a></li>
+        <li><a href="/buyers">Account Details</a></li>
+        <li>Saved Search Details</li>
+      
+    </ol>
+  </nav>
 </div>
 
-<a href="/g-cloud/search">Perform a new search</a>
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-full">
+      <div id="wrapper">
+        <main id="content" role="main">
+          <header class="page-heading">
+            <h1>Search Details</h1>
+          </header>
+    
+          <table>
+                <caption class="heading-small">{{ data.name }}'s Search Details</caption>
+                <tbody>
+                  <tr>
+                    <td>Name</td>
+                    <td>{{ data.name }}</td>
+                  </tr>
+                  <tr>
+                    <td>Created Date</td>
+                    <td>{{ data.created_date | unixToReadable }}</td>
+                  </tr>
+                  <tr>
+                    <td>Last Modified</td>
+                    <td>{{ data.last_modified | unixToReadable }}</td>
+                  </tr>
+                  <tr>
+                    <td>Search URL</td>
+                    <td><a href="{{ data.search_url }}" target="_blank">Open search in new tab</a></td>
+                  </tr>
+                </tbody>
+              </table>
+        </main>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
 
-{% if ( existing_searches.length != 0 ) %}
-
-<table>
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Created Date</th>                
-      <th scope="col">Last Modified Date</th>                
-      <th scope="col">Search URL</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-
-    {% for key, item in existing_searches %}
-    <tr>
-      <th scope="row">{{ item.name }}</th>
-      <td>{{ item.created_date | unixToReadable }}</td>
-      <td>{{ item.last_modified | unixToReadable }}</td>
-      <td style="max-width: 300px; overflow: hidden;"><a href="{{ item.search_url }}" target="_blank">Open search in new tab</a></td>
-      <td><a href="/buyers/saved-search/{{ key }}">View details</a></td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
-
-{% endif %}
 

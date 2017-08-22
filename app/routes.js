@@ -138,10 +138,17 @@ router.post('/g-cloud/search/save-search', function (req, res) {
   res.redirect('/buyers')
 })
 
-// G-Cloud save-search page
 router.get('/buyers/saved-searches', function (req, res) {
-  var existing_searches = req.session.saved_searches;
-  res.render('buyers/saved-searches/index', { existing_searches: req.session.saved_searches }); 
+  res.redirect( '/buyers' )
+})
+
+// G-Cloud save-search page
+router.get('/buyers/saved-searches/:search_id', function (req, res) {
+  var search_id = req.params.search_id;
+
+  var search_data = req.session.saved_searches[search_id];
+
+  res.render('buyers/saved-searches/index', { data: search_data }); 
 })
 
 
