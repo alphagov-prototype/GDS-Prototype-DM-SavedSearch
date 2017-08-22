@@ -16,6 +16,7 @@
       <th scope="col">Created Date</th>                
       <th scope="col">Last Modified Date</th>                
       <th scope="col">Search URL</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -25,7 +26,8 @@
       <th scope="row">{{ item.name }}</th>
       <td>{{ item.created_date | unixToReadable }}</td>
       <td>{{ item.last_modified | unixToReadable }}</td>
-      <td style="max-width: 300px; overflow: hidden;"><a href="{{ item.search_url }}" target="_blank">{{ item.search_url }}</a></td>
+      <td style="max-width: 300px; overflow: hidden;"><a href="{{ item.search_url }}" target="_blank">Open search in new tab</a></td>
+      <td><a href="/buyers/saved-search/{{ key }}">View details</a></td>
     </tr>
     {% endfor %}
   </tbody>
