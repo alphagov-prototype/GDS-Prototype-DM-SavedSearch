@@ -4,7 +4,8 @@
     (function(){
         $('#saveYourSearch').on('click', (e) => {
             var search_url = `${window.location.pathname}${window.location.search}`;
-            var path = `/g-cloud/search/save-search?search_url=${encodeURIComponent(search_url)}`;
+            var summary = $('#js-dm-live-search-summary').text().trim();
+            var path = `/g-cloud/search/save-search?search_url=${encodeURIComponent(search_url)}&summary=${encodeURIComponent(summary)}`;
             window.location.href = path;
         });
     })();

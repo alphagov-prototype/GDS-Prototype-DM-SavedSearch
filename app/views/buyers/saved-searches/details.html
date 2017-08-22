@@ -43,6 +43,10 @@
                     <td>{{ data.last_modified | unixToReadable }}</td>
                     </tr>
                     <tr>
+                    <td>Summary</td>
+                    <td>{{ data.summary }}</td>
+                    </tr>
+                    <tr>
                     <td>Search URL</td>
                     <td><a href="{{ data.search_url }}" target="_blank">Open search in new tab</a></td>
                     </tr>
@@ -55,6 +59,7 @@
                     <tr>
                     <th scope="col">Name</th>
                     <th scope="col">Searched date</th>
+                    <th scope="col">Summary</th>
                     <th scope="col">Search URL</th>
                     </tr>
                 </thead>
@@ -63,11 +68,12 @@
                     <tr>
                         <th scope="row">{{ item.name }}</th>
                         <td>{{ item.created_date | unixToReadable }}</td>
+                        <td>{{ item.summary }}</td>
                         <td style="max-width: 300px; overflow: hidden;"><a href="{{ item.search_url }}" target="_blank">Open search in new tab</a></td>
                     </tr>
                     {% else %}
                     <tr>
-                        <th colspan="3">No history</th>
+                        <th colspan="4">No history</th>
                     </tr>
                     {% endfor %}
                     

@@ -96,8 +96,9 @@ router.get('/g-cloud/search/save-search', function (req, res) {
     return res.redirect('/login')
   }
   var search_url = req.query.search_url;
+  var summary = req.query.summary;
   var existing_searches = req.session.saved_searches;
-  res.render('g-cloud/search/save-search/index', { search_url: search_url, existing_searches: req.session.saved_searches }); 
+  res.render('g-cloud/search/save-search/index', { search_url: search_url, summary: summary, existing_searches: req.session.saved_searches }); 
 })
 
 // G-Cloud save-search page
@@ -117,6 +118,7 @@ router.post('/g-cloud/search/save-search', function (req, res) {
   var data = {
     name: req.body.search_name,
     search_url: req.body.search_url,
+    summary: req.body.summary,
     last_modified: date_now,
     history: []
   };
@@ -131,11 +133,13 @@ router.post('/g-cloud/search/save-search', function (req, res) {
       name: req.session.saved_searches[ existing_search ].name,
       search_url: req.session.saved_searches[ existing_search ].search_url,
       created_date: req.session.saved_searches[ existing_search ].last_modified,
+      summary: req.session.saved_searches[ existing_search ].summary,
     };
 
     req.session.saved_searches[ existing_search ].history.push( audit );
     req.session.saved_searches[ existing_search ].search_url = data.search_url;
     req.session.saved_searches[ existing_search ].last_modified = data.last_modified;
+    req.session.saved_searches[ existing_search ].summary = data.summary;
   }
   else
   {
