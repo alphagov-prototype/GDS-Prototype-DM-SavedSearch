@@ -38,7 +38,7 @@ router.get('/buyers', function (req, res) {
   {
     return res.redirect('/login')
   }
-  res.render('buyers/index')
+  res.render('buyers/index', {existing_searches: req.session.saved_searches} )
 })
 
 //buyer register page
@@ -119,7 +119,7 @@ router.post('/g-cloud/search/save-search', function (req, res) {
     req.session.saved_searches[new_id] = data;
   }
 
-  res.redirect('/buyers/saved-searches')
+  res.redirect('/buyers')
 })
 
 // G-Cloud save-search page
