@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Digital Marketplace
+{% endblock %}
+
+{% block content %}
+{% include "includes/phase_banner_prototype.html" %}
+
+<div id="global-breadcrumb" class="header-context">
+  <nav>
+    <ol class="group" role="breadcrumbs">
+        <li><a href="/">Digital Marketplace</a></li>        
+      
+        <li><a href="/buyers">View Your Account</a></li>
+        
+        <li>Saved Searches</li>
+      
+    </ol>
+  </nav>
+</div>
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-full">
+      <div id="wrapper">
+        <main id="content" role="main">
+          <header class="page-heading">
+            <h1>Saved searches</h1>
+          </header>
+
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Created Date</th>                
+                <th scope="col">Last Modified Date</th>                
+                <th scope="col">Search URL</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              {% for key, item in existing_searches %}
+              <tr>
+                <th scope="row">{{ item.name }}</th>
+                <td>{{ item.created_date | unixToReadable }}</td>
+                <td>{{ item.last_modified | unixToReadable }}</td>
+                <td style="max-width: 300px; overflow: hidden;"><a href="{{ item.search_url }}" target="_blank">{{ item.search_url }}</a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+        </main>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

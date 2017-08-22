@@ -7,6 +7,13 @@ module.exports = function (env) {
    */
   var filters = {}
 
+  filters.unixToReadable = function( unix_time ) {
+      var newDate = new Date();
+      newDate.setTime(unix_time);
+      dateString = newDate.toUTCString();
+      return dateString;
+  }
+
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
     @example:

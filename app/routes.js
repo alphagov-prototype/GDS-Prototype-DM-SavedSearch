@@ -90,11 +90,20 @@ router.get('/g-cloud/search/save-search', function (req, res) {
 // G-Cloud save-search page
 router.post('/g-cloud/search/save-search', function (req, res) {
 
-  var existing_search = req.body.existing_search;
+  var guidGenerator = function() {
+    var S4 = function() {
+       return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+    };
+    return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+  };
 
+  var existing_search = req.body.existing_search;
+  var date_now = Date.now();
+  
   var data = {
     name: req.body.search_name,
     search_url: req.body.search_url,
+    last_modified: date_now
   };
 
   if ( !req.session.saved_searches ) req.session.saved_searches = {};
@@ -102,22 +111,23 @@ router.post('/g-cloud/search/save-search', function (req, res) {
   if ( existing_search && existing_search != '' )
   {
     req.session.saved_searches[ existing_search ].search_url = data.search_url;
+    req.session.saved_searches[ existing_search ].last_modified = data.last_modified;
   }
   else
   {
     var new_id = guidGenerator();
+    data.created_date = date_now;
     req.session.saved_searches[new_id] = data;
   }
 
-  res.json(req.session.saved_searches);
+  res.redirect('/buyers/saved-searches')
 })
 
-function guidGenerator() {
-  var S4 = function() {
-     return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
-  };
-  return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
-}
+// G-Cloud save-search page
+router.get('/buyers/saved-searches', function (req, res) {
+  var existing_searches = req.session.saved_searches;
+  res.render('buyers/saved-searches/index', { existing_searches: req.session.saved_searches }); 
+})
 
 
 
