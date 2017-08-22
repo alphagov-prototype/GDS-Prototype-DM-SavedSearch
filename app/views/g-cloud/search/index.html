@@ -3,8 +3,8 @@
 {% block search_content %}
 <section aria-label="Search filters" class="column-one-third search-page-filters">
     <form action="/g-cloud/search/live?live-results=true" id="js-dm-live-search-form" method="get" name="js-dm-live-search-form">
-    <input type="hidden" name="lot" value="{{ lot }}">
-    <input type="hidden" name="serviceCategories" value="{{ serviceCategories }}">    
+    <input type="hidden" name="lot" value="{{ query.lot }}">
+    <input type="hidden" name="serviceCategories" value="{{ query.serviceCategories }}">    
     {% include "./includes/keyword_search.html" %}
     {% include "./includes/categories.html" %}
     {% include "./includes/filters.html" %}
@@ -30,5 +30,35 @@
             
         });
     })();
+
+    /* CHECKBOX FILTERS SELECT */
+    (function(){
+        var checkBox = function( name, value )
+        {
+            console.log()
+            $("input[name=" + name + "]input[value='" + value + "']input[type=checkbox]").prop('checked','checked');
+        }
+
+        var filters = {{ query | dump | safe}};
+        for ( var i in filters )
+        {
+            if ( typeof filters[i] == 'object' )
+            {
+                for( var x = 0; x < filters[i].length; x++ )
+                {
+                    checkBox(i, filters[i][x] );
+                }
+            }
+            else
+            {
+                checkBox( i, filters[i] );
+            }
+
+            
+        }
+
+        
+    })();
+
 </script>
 {% endblock %}
