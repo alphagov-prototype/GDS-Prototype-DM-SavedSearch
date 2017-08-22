@@ -33,24 +33,33 @@
             <h1>Save your search</h1>
           </header>
           <hr>
-
+          
           <form action="" method="POST">
             <div class="form-group">
-              <label class="form-label" for="search-name">Name</label>
-              <input class="form-control" id="search-name" name="search-name" type="text">
+              <label class="form-label" for="search_name">Name</label>
+              <input class="form-control" id="search_name" name="search_name" type="text">
             </div>
+
+            {% if existing_searches %}
+
             <div class="form-group">
               <p>or</p>
             </div>
             <div class="form-group">
-              <label class="form-label" for="select-box">Select Existing</label>
-              <select class="form-control" id="select-box" name="select-box">
-                <option>select</option>
-                <option value="existing_search_1">Search 1</option>
-                <option value="existing_search_2">Search 2</option>
-                <option value="existing_search_3">Search 3</option>
+              <label class="form-label" for="existing_search">Select Existing</label>
+              <select class="form-control" name="existing_search">
+                <option value="">select</option>
+                
+                {% for key, item in existing_searches %}
+                  <option value="{{ key }}">{{ item.name }}</option>
+                {% endfor %}
+            
               </select>
             </div>
+
+            {% endif %}
+
+            <input type="hidden" name="search_url" value="{{ search_url }}">
             <input class="button" type="submit" value="Save and continue">            
           </form>
         </main>

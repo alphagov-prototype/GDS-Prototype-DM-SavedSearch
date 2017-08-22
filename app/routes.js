@@ -80,6 +80,44 @@ router.get('/g-cloud/search/live', function(req, res){
   });
 })
 
+// G-Cloud save-search page
+router.get('/g-cloud/search/save-search', function (req, res) {
+  var search_url = req.query.search_url;
+  var existing_searches = req.session.saved_searches;
+  res.render('g-cloud/search/save-search/index', { search_url: search_url, existing_searches: req.session.saved_searches }); 
+})
+
+// G-Cloud save-search page
+router.post('/g-cloud/search/save-search', function (req, res) {
+
+  var existing_search = req.body.existing_search;
+
+  var data = {
+    name: req.body.search_name,
+    search_url: req.body.search_url,
+  };
+
+  if ( !req.session.saved_searches ) req.session.saved_searches = {};
+
+  if ( existing_search && existing_search != '' )
+  {
+    req.session.saved_searches[ existing_search ].search_url = data.search_url;
+  }
+  else
+  {
+    var new_id = guidGenerator();
+    req.session.saved_searches[new_id] = data;
+  }
+
+  res.json(req.session.saved_searches);
+})
+
+function guidGenerator() {
+  var S4 = function() {
+     return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+  };
+  return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+}
 
 
 
